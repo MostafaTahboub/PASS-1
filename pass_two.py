@@ -79,8 +79,9 @@ if ERRCTR == 0:
                     LISTFILE.write(objCode + "\n")
                     LISTARR.append(objCode)
 
-                elif MNEMONIC == "BYTE" and MNEMONIC != "LTORG":  
-                    temp = OPERAND[2:len(OPERAND) - 1]  
+                elif MNEMONIC == "BYTE" :  
+                    temp = OPERAND[2:len(OPERAND) - 1] 
+                    objCode="" 
 
                     if "X'" in OPERAND:  
                         LISTFILE.write(temp + "\n")  
@@ -115,9 +116,7 @@ while currentListing < len(LISTARR):
         pointer = OBJ_FILE.tell()   # save current position of the file object
         OBJ_FILE.write("  ")
         j = currentListing
-
-       
-        while j < len(LISTARR) and LISTARR[j] != "" and lngth < 10:
+        while j < len(LISTARR) and LISTARR[j] != "" and lngth <= 9:
             OBJ_FILE.write("^" + LISTARR[j].upper())
             lngth += 1
             j += 1

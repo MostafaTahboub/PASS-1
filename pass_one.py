@@ -17,9 +17,6 @@ PRGNAME = ""
 ERRCTR = 0
 ADDSTA = 0
 
-print("\n**************SIC ASSEMBLER*****************\n")
-# Reading from file
-# Reading first line
 line = INPUT.readline()
 
 if line:
